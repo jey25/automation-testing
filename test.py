@@ -21,5 +21,5 @@ time.sleep(2)
 search = browser.find_element_by_css_selector('input.maintxt')
 search.click()
 
-search.send_keys('두나무')
+search.send_keys('삼성전자')
 search.send_keys(Keys.ENTER)
