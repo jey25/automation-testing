@@ -5,7 +5,7 @@ import time
 import csv
 
 browser = webdriver.Chrome('C:\chromedriver\chromedriver.exe')
-browser.get('https://stockplus.com/m')
+browser.get('https://stockplus.com/')
 
 browser.implicitly_wait(10)
 
