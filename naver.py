@@ -60,12 +60,11 @@ while i < 36:
     i += 1
 
 browser.find_element_by_xpath('//*[@id="s_year"]').click()
-browser.find_element_by_xpath('//*[@id="s_year"]/option[2]').click()
-browser.find_element_by_xpath('//*[@id="s_year"]/option[3]').click()
-browser.find_element_by_xpath('//*[@id="s_year"]/option[4]').click()
-browser.find_element_by_xpath('//*[@id="s_year"]/option[5]').click()
-browser.find_element_by_xpath('//*[@id="s_year"]/option[6]').click()
-browser.find_element_by_xpath('//*[@id="s_year"]/option[7]').click()
+
+while i < 7:
+    browser.find_element_by_xpath(f'//*[@id="s_year"]/option[{i}]').click()
+    i += 1
+
 browser.find_element_by_xpath('//*[@id="s_year"]').click()
 browser.find_element_by_xpath('//*[@id="s_year"]/option[1]').click()
 
@@ -80,3 +79,22 @@ browser.find_element_by_xpath('//*[@id="search_str"]').send_keys('asdasd')
 browser.find_element_by_xpath('//*[@id="ccContent"]/article[3]/div[1]/div[1]/form/fieldset/div/p[2]/button').click()
 
 browser.get('https://help.whale.naver.com/desktop/')
+time.sleep(2)
+
+browser.find_element_by_xpath('//*[@id="container"]/div[2]/div[2]/ul/li[1]/a').click()
+
+browser.implicitly_wait(10)
+
+i = 2
+while i < 10:
+    browser.find_element_by_xpath(f'//*[@id="container"]/div[1]/ul/li[1]/ul/li[{i-1}]/a').click()
+    i += 1
+
+browser.find_element_by_xpath('//*[@id="container"]/div[1]/ul/li[2]/a').click()
+
+i = 2
+while i < 9:
+    browser.find_element_by_xpath(f'//*[@id="container"]/div[1]/ul/li[2]/ul/li[{i-1}]/a').click()
+    i += 1
+
+browser.find_element_by_xpath('//*[@id="container"]/div[1]/ul/li[3]/a').click()
