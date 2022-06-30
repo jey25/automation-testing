@@ -23,24 +23,31 @@ chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
 service = Service(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=chrome_options)
 
+#브라우저 대기시간, 사이즈 설정
 driver.implicitly_wait(5)
 driver.set_window_size(1650, 950)
 
-driver.get(
-    'https://csonline.nexon.com/Main/Index')
 
-driver.find_element(By.CSS_SELECTOR, "#GNB_BannerBtToday").click()
+driver.get('https://csonline.nexon.com/Main/Index')
+
+driver.find_element(By.CSS_SELECTOR, "#GNB_BannerBtClose").click()
 time.sleep(2)
 
 driver.find_element(By.CSS_SELECTOR, "body > div.gnbWrapper.gnbSizeL > div.gnbBar > h1 > a").click()
 
-driver.find_element(By.CSS_SELECTOR, "#GNB_BannerBtClose").click()
-
-driver.get(
-    'https://csonline.nexon.com/Main/Index')
+driver.find_element(By.CSS_SELECTOR, "#GNB_BannerBtToday").click()
 
 
+driver.get('https://csonline.nexon.com/Main/Index')
 
-driver.find_element(By.CSS_SELECTOR, "#header > ul > li.active > a").click()
-driver.find_element(By.CSS_SELECTOR, "#header > ul > li.active > ul > li.active > a").click()
-driver.find_element(By.CSS_SELECTOR, "#container > div > div > ul > li.active > a").click()
+driver.find_element(By.CSS_SELECTOR, "#GNB_BannerBtToday").click()
+
+
+driver.find_element(By.CSS_SELECTOR, "#header > h1 > a").click()
+time.sleep(2)
+
+
+#CSO 소식 클릭
+driver.find_element(By.CSS_SELECTOR, "#header > ul > li:nth-child(1) > a").click()
+time.sleep(1)
+
